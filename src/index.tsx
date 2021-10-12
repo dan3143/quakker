@@ -1,8 +1,14 @@
 import React from "react";
-import { render } from "react-dom";
+import { hydrate, render } from "react-dom";
+import "./styles/index.scss";
+import App from "./App";
 
-render(
-  <h1>Hola, por fin!!!!!!</h1>,
-  document.getElementById("root")
-)
+const rootElement = document.getElementById("root");
+const renderFunction = rootElement?.hasChildNodes() ? hydrate : render;
 
+renderFunction(
+  <React.StrictMode>
+    <App></App>
+  </React.StrictMode>,
+  rootElement
+);
