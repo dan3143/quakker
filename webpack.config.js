@@ -1,11 +1,15 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const webpack = require("webpack");
 
 module.exports = {
   entry: path.join(__dirname, "src", "index.tsx"),
   output: { path: path.join(__dirname, "build"), filename: "index.bundle.js" },
   mode: process.env.NODE_ENV || "development",
-  resolve: { extensions: [".ts", ".tsx", ".json", ".js", ".jsx"] },
+  resolve: {
+    extensions: [".ts", ".tsx", ".json", ".js", ".jsx"],
+    modules: [path.resolve(__dirname, "src"), "node_modules"],
+  },
   module: {
     rules: [
       {
@@ -40,6 +44,7 @@ module.exports = {
     hot: true,
   },
   plugins: [
+    new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
       template: path.join(__dirname, "src", "index.html"),
     }),

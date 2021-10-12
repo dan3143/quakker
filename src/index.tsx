@@ -1,7 +1,7 @@
 import React from "react";
 import { hydrate, render } from "react-dom";
 import "./styles/index.scss";
-import App from "./App";
+import App from "App";
 
 const rootElement = document.getElementById("root");
 const renderFunction = rootElement?.hasChildNodes() ? hydrate : render;
