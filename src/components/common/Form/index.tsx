@@ -11,7 +11,7 @@ const Form: FC<FormProps> = ({ children, title, ...rest }) => (
     <header>
       <Logo width={64} height={64} />
       <p className="form__appname">Quakker</p>
-      <h2 className="form__title">{title}</h2>
+      <h1 className="form__title">{title}</h1>
     </header>
     <main>
       <form {...rest} className="form__content">
