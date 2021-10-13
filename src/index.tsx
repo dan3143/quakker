@@ -1,6 +1,7 @@
 import React from "react";
 import { hydrate, render } from "react-dom";
 import "./styles/index.scss";
+import "normalize.css";
 import App from "App";
 
 const rootElement = document.getElementById("root");
