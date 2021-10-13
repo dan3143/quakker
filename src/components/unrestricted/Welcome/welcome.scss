@@ -1,0 +1,57 @@
+@import "variables";
+@import "mixins";
+
+.welcome__left-side {
+  display: none;
+}
+
+.welcome__right-side {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 1.5rem;
+
+  h1 {
+    margin: 1rem 0;
+    font-size: 30px;
+    line-height: 26px;
+  }
+
+  .logo {
+    margin: 26px auto;
+  }
+}
+
+.button {
+  margin-bottom: 32px;
+  font-size: 16px;
+}
+
+.signup-text {
+  place-self: start;
+}
+
+@include medium {
+  .welcome {
+    display: flex;
+    height: 100vh;
+  }
+
+  .welcome__right-side {
+    flex: 1;
+  }
+
+  .welcome__left-side {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $primaryColor;
+    padding: 2rem;
+    flex: 1;
+  }
+
+  .button {
+    width: 347px;
+  }
+}
