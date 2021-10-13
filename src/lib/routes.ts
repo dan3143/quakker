@@ -1,3 +1,4 @@
+import ForgotPassword from "components/unrestricted/ForgotPassword";
 import Login from "components/unrestricted/Login";
 import SignUp from "components/unrestricted/SignUp";
 import Welcome from "components/unrestricted/Welcome";
@@ -11,7 +12,8 @@ interface Route {
 const unrestricted: Route[] = [
     { path: "/", component: Welcome },
     { path: "/login", component: Login },
-    { path: "/signup", component: SignUp }
+    { path: "/signup", component: SignUp },
+    { path: "/forgot-password", component: ForgotPassword },
 ];
 
 const restricted: Route[] = [];
