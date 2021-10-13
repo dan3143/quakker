@@ -5,6 +5,7 @@ interface InputProps {
   name?: string;
   title: string;
   type: string;
+  [rest: string]: any;
 }
 
 const Input: FC<InputProps> = ({ id, name, title, type, ...rest }) => {

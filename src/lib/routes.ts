@@ -1,3 +1,4 @@
+import Login from "components/unrestricted/Login";
 import Welcome from "components/unrestricted/Welcome";
 import { FC } from "react";
 
@@ -7,7 +8,8 @@ interface Route {
 }
 
 const unrestricted: Route[] = [
-    { path: "/", component: Welcome }
+    { path: "/", component: Welcome },
+    { path: "/login", component: Login },
 ];
 
 const restricted: Route[] = [];

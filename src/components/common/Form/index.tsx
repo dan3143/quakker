@@ -3,6 +3,7 @@ import { FC } from "react";
 
 interface FormProps {
   title: string;
+  [rest: string]: any;
 }
 
 const Form: FC<FormProps> = ({ children, title, ...rest }) => (

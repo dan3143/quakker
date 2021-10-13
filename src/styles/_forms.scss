@@ -1,0 +1,67 @@
+.form {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  header,
+  main {
+    width: 100%;
+  }
+}
+
+.form__title {
+  @include reset;
+  color: map-get($textColors, "900");
+}
+
+.form__appname {
+  @include reset;
+  margin-top: 17px;
+  font-size: large;
+  color: map-get($textColors, "700");
+}
+
+.form__content {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 24px;
+  .input {
+    margin-bottom: 10px;
+  }
+}
+
+.input,
+.input__field {
+  width: 100%;
+}
+
+.input__field {
+  padding: 17px 20px;
+  margin-top: 10px;
+  border: 1px solid $borderColor;
+  border-radius: 5px;
+}
+
+.input__label {
+  color: map-get($textColors, "700");
+  display: block;
+}
+
+.auth-form .form {
+  width: 40%;
+  margin: 90px auto;
+}
+.auth-form__forgot-link {
+  display: block;
+  margin: 30px 0;
+}
+
+.auth-form__button {
+  margin-top: 30px;
+  width: 100%;
+}
+.auth-form__message {
+  margin-top: 30px;
+  text-align: center;
+  color: map-get($textColors, "700");
+}
