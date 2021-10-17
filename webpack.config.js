@@ -4,7 +4,11 @@ const webpack = require("webpack");
 
 module.exports = {
   entry: path.join(__dirname, "src", "index.tsx"),
-  output: { path: path.join(__dirname, "build"), filename: "index.bundle.js" },
+  output: {
+    path: path.join(__dirname, "build"),
+    filename: "index.bundle.js",
+    publicPath: "/",
+  },
   mode: process.env.NODE_ENV || "development",
   resolve: {
     extensions: [".ts", ".tsx", ".json", ".js", ".jsx"],
@@ -52,6 +56,7 @@ module.exports = {
     ],
   },
   devServer: {
+    historyApiFallback: true,
     hot: true,
   },
   plugins: [
