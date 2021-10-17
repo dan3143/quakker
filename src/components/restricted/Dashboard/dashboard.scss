@@ -4,6 +4,7 @@
 .dashboard {
     overflow: hidden;
     display: flex;
+    flex-direction: column;
     height: 100vh;
 
     .navigation {
@@ -24,4 +25,19 @@
         }
     }
 
+}
+
+@include small {
+    .dashboard {
+
+        flex-direction: row;
+    }
+
+    .mobile-header {
+        display: none;
+    }
+
+    .mobile-footer {
+        display: none;
+    }
 }

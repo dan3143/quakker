@@ -1,0 +1,17 @@
+@import 'variables';
+
+.mobile-footer {
+    display: flex;
+    justify-content: space-around;
+    border-top: 1px solid $borderColor;
+    padding: 15px 0;
+}
+
+.mobile-footer__footer-item {
+    font-size: 25px;
+    color: gray;
+}
+
+.mobile-footer__footer-item--active {
+    color: $primaryColor;
+}

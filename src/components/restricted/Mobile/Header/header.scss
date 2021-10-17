@@ -1,0 +1,24 @@
+@import "variables";
+
+.mobile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid $borderColor;
+}
+
+.mobile-header__button {
+    color: gray;
+    font-size: 25px;
+}
+
+.mobile-header__button--active {
+    color: $primaryColor;
+}
+
+.mobile-header__profile-pic {
+    height: 32px;
+    width: 32px;
+    border-radius: 100%;
+}
