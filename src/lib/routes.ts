@@ -6,7 +6,12 @@ import { FC } from "react";
 
 interface Route {
     path: string;
-    component: FC
+    component: FC;
+}
+
+interface DummyRoute {
+    path: string;
+    name: string;
 }
 
 const unrestricted: Route[] = [
@@ -18,4 +23,13 @@ const unrestricted: Route[] = [
 
 const restricted: Route[] = [];
 
-export {restricted, unrestricted};
+const dummy: DummyRoute[] = [
+    { path: "/explore", name: "Explore" },
+    { path: "/messages", name: "Messages" },
+    { path: "/notifications", name: "Notifications" },
+    { path: "/bookmarks", name: "Bookmarks" },
+    { path: "/lists", name: "List" },
+    { path: "/more", name: "More" },
+];
+
+export {restricted, unrestricted, dummy};
