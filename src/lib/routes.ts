@@ -1,3 +1,4 @@
+import Profile from "components/restricted/Profile";
 import ForgotPassword from "components/unrestricted/ForgotPassword";
 import Login from "components/unrestricted/Login";
 import SignUp from "components/unrestricted/SignUp";
@@ -21,7 +22,9 @@ const unrestricted: Route[] = [
     { path: "/forgot-password", component: ForgotPassword },
 ];
 
-const restricted: Route[] = [];
+const restricted: Route[] = [
+    { path: "/profile", component: Profile }
+];
 
 const dummy: DummyRoute[] = [
     { path: "/explore", name: "Explore" },

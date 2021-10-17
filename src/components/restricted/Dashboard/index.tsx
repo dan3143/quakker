@@ -9,7 +9,7 @@ const Dashboard = () => (
   <BrowserRouter>
     <div className="dashboard">
       <Nav />
-      <main className="content">
+      <div className="content">
         <Switch>
           {restricted.map(({ path, component }, index) => (
             <Route exact path={path} key={index} component={component} />
@@ -24,7 +24,7 @@ const Dashboard = () => (
             />
           ))}
         </Switch>
-      </main>
+      </div>
     </div>
   </BrowserRouter>
 );
