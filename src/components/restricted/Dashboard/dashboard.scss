@@ -1,0 +1,27 @@
+@import 'mixins';
+@import 'variables';
+
+.dashboard {
+    overflow: hidden;
+    display: flex;
+    height: 100vh;
+
+    .navigation {
+        flex: 1;
+        overflow: hidden;
+
+        &:hover {
+            overflow-y: auto;
+        }
+    }
+
+    .content {
+        flex: 4;
+        overflow: hidden;
+
+        &:hover {
+            overflow-y: auto;
+        }
+    }
+
+}
