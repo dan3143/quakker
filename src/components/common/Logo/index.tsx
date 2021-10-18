@@ -5,16 +5,18 @@ interface LogoProps {
   height?: number;
   width?: number;
   logoClass?: string;
+  link?: string;
 }
 
 const Logo: FC<LogoProps> = ({
   height = 512,
   width = 512,
   logoClass,
+  link = "/",
   ...rest
 }) => (
   <div {...rest} className="logo">
-    <Link to="/">
+    <Link to={link}>
       <svg
         viewBox="0 0 512 512"
         height={height}
