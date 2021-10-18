@@ -1,4 +1,6 @@
-[
+import Quak from "types/quak";
+
+const quaks: Quak[] = [
   {
     "id": 40,
     "user": "kev",
@@ -33,7 +35,7 @@
     "date": "2021-08-09 10:58:13"
   },
   {
-    "id": 42,
+    "id": 43,
     "user": "eugene",
     "type": "requak",
     "parent": 41,
@@ -98,7 +100,7 @@
     "likes": 20,
     "requaks": 100,
     "replies": 20,
-    "type": "requak",
+    "type": "citation",
     "parent": 45,
     "date": "2021-08-11 19:20:45"
   },
@@ -112,4 +114,6 @@
     "type": "quak",
     "date": "2021-08-12 12:38:11"
   }
-]
+];
+
+export default quaks;

@@ -1,4 +1,7 @@
-[
+import User from "types/user";
+
+
+const users: User[] = [
   {
     "id": 2,
     "username": "maria_camila",
@@ -35,3 +38,5 @@
     "profilePic": "https://yt3.ggpht.com/87xneBxgkgoLhQ7ZicNXEZEWg-4L-WCgo-duBTjy8M4JJQnuUAdraMZNDJZd1WY6_ZM19vUL4A=s176-c-k-c0x00ffffff-no-rj-mo"
   }
 ]
+
+export default users;
