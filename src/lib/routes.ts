@@ -1,4 +1,6 @@
 import Profile from "components/restricted/Profile";
+import Quaks from "components/restricted/Quaks";
+import Timeline from "components/restricted/Timeline";
 import ForgotPassword from "components/unrestricted/ForgotPassword";
 import Login from "components/unrestricted/Login";
 import SignUp from "components/unrestricted/SignUp";
@@ -23,7 +25,9 @@ const unrestricted: Route[] = [
 ];
 
 const restricted: Route[] = [
-    { path: "/profile", component: Profile }
+    { path: "/profile", component: Profile },
+    { path: "/home", component: Quaks },
+    { path: "/timeline/:username", component: Timeline },
 ];
 
 const dummy: DummyRoute[] = [
