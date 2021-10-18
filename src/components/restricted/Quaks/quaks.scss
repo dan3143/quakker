@@ -1,4 +1,18 @@
 @import "variables";
+@import "mixins";
+
+.home {
+    display: flex;
+
+    .sidebar {
+        display: none;
+        flex: 1;
+    }
+
+    .home__content {
+        flex: 2;
+    }
+}
 
 .home__title {
     color: map-get($textColors, 800);
@@ -6,4 +20,10 @@
     font-weight: 800;
     margin-top: 30px;
     margin-left: 32px;
+}
+
+@include medium {
+    .home .sidebar {
+        display: flex;
+    }
 }
