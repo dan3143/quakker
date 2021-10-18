@@ -1,4 +1,5 @@
 @import "variables";
+@import "mixins";
 
 .sidebar {
     display: flex;
@@ -33,4 +34,57 @@
     position: absolute;
     top: calc(50% - 0.5rem);
     left: 16px;
+}
+
+.trending {
+    margin-top: 16px;
+    background-color: #F6F8FA;
+    display: flex;
+    flex-flow: column;
+    border-radius: 12px;
+
+    a {
+        text-decoration: none;
+    }
+
+}
+
+.trending__header {
+    line-height: 22px;
+    font-size: 19px;
+    font-weight: 900;
+    text-align: center;
+    width: 100%;
+
+}
+
+.trend {
+    padding: 10px 16px;
+    border-bottom: 1px solid $borderColor;
+
+    p {
+        @include reset;
+        margin-bottom: 4px;
+    }
+}
+
+.trend__position,
+.trend__quaks {
+    color: gray;
+    font-size: 12px;
+}
+
+.trend__name {
+    color: #333;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.trending__more {
+    border: none;
+    background: none;
+    padding: 12px;
+    font-size: 14px;
+    color: $primaryColor;
+    cursor: pointer;
 }
