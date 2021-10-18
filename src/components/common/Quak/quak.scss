@@ -1,0 +1,116 @@
+@import "variables";
+@import "mixins";
+
+$textColor100: gray;
+
+.quak {
+    display: flex;
+    border-bottom: 1px solid $borderColor;
+    padding: 20px 17px;
+    color: black;
+}
+
+.quak__link {
+    color: #0f52ba;
+}
+
+.quak__main {
+    margin-left: 16px;
+    width: 100%;
+}
+
+.quak-info {
+    span {
+        display: inline-block;
+        margin-right: 5px;
+    }
+}
+
+.quak-info__name {
+    font-weight: bold;
+    color: $textColor100;
+}
+
+.quak__profile-photo {
+    img {
+        width: 30px;
+        height: 30px;
+        border-radius: 100px;
+    }
+}
+
+.quak__content {
+    margin-top: 8px;
+
+    p {
+        @include reset;
+    }
+}
+
+.quak-info__separator,
+.quak-info__date {
+    color: $textColor100;
+}
+
+.quak-info {
+    a {
+        color: $textColor100;
+    }
+}
+
+.quak-buttons {
+    display: flex;
+    margin-top: 14px;
+    width: 100%;
+}
+
+.quak-button {
+    flex: 1;
+    display: flex;
+    align-content: center;
+    justify-content: flex-start;
+    background: none;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    color: rgb(153, 153, 153);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.quak-button--replies:hover {
+    color: #0EAD69;
+}
+
+.quak-button--likes:hover {
+    color: #FE4A49;
+}
+
+.quak-button--requaks:hover {
+    color: #07A0C3;
+}
+
+.quak-button--share:hover {
+    color: #232C33;
+}
+
+.quak-button__icon {
+    height: 100%;
+    margin-right: 10px;
+}
+
+.quak-details {
+    h3 {
+        margin-left: 20px;
+    }
+}
+
+@include small {
+    .quak__profile-photo {
+        img {
+            width: 45px;
+            height: 45px;
+            border-radius: 100px;
+        }
+    }
+}

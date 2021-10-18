@@ -18,11 +18,7 @@
 
     .content {
         flex: 4;
-        overflow: hidden;
-
-        &:hover {
-            overflow-y: auto;
-        }
+        overflow: auto;
     }
 
 }
