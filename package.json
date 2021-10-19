@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "start": "webpack serve --mode development",
-    "build": "webpack && react-snap"
+    "build": "rm -r build/* && webpack && react-snap"
   },
   "devDependencies": {
     "@babel/core": "^7.15.8",
