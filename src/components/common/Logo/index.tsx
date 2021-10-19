@@ -16,7 +16,7 @@ const Logo: FC<LogoProps> = ({
   ...rest
 }) => (
   <div {...rest} className="logo">
-    <Link to={link}>
+    <Link to={link} aria-label="Go home">
       <svg
         viewBox="0 0 512 512"
         height={height}
