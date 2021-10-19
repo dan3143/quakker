@@ -12,9 +12,11 @@ const Quaks: FC = () => {
       <main className="home__content">
         <Metadata title="Home" />
         <h2 className="home__title">Home</h2>
-        {quaks.map((quak) => (
-          <Quak quak={quak} key={quak.id} />
-        ))}
+        {quaks
+          .filter((quak) => quak.type === "quak")
+          .map((quak) => (
+            <Quak quak={quak} key={quak.id} />
+          ))}
       </main>
       <Sidebar />
     </div>

@@ -44,6 +44,7 @@ $textColor100: gray;
 
     p {
         @include reset;
+        margin-bottom: 0.25rem;
     }
 }
 
@@ -75,7 +76,6 @@ $textColor100: gray;
     cursor: pointer;
     color: rgb(153, 153, 153);
     font-weight: bold;
-    text-decoration: none;
 }
 
 .quak-button--replies:hover {
