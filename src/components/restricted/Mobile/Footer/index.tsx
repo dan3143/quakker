@@ -12,7 +12,7 @@ import FooterItem from "./FooterItem";
 const Footer: FC = () => (
   <footer className="mobile-footer">
     <FooterItem to="/home" icon={faHome} />
-    <FooterItem to="/trending" icon={faHashtag} />
+    <FooterItem to="/explore" icon={faHashtag} />
     <FooterItem to="/notifications" icon={faBell} />
     <FooterItem to="/messages" icon={faEnvelope} />
   </footer>
