@@ -28,7 +28,7 @@ const unrestricted: Route[] = [
 
 const restricted: Route[] = [
   { path: "/profile", component: Profile },
-  { path: "/home", component: Quaks },
+  { path: "/", component: Quaks },
   { path: "/timeline/:username", component: Timeline },
   { path: "/search", component: Search },
   { path: "/quak/:id", component: QuakDetails },

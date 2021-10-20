@@ -17,3 +17,10 @@ a {
   color: $primaryColor;
   text-decoration: none;
 }
+
+.error-box {
+  border-left: 0.25rem solid #DC2626;
+  background-color: #FEE2E2;
+  color: #DC2626;
+  padding: 1rem;
+}

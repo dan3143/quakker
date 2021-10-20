@@ -8,28 +8,26 @@ import Nav from "../Nav";
 import "./dashboard.scss";
 
 const Dashboard = () => (
-  <BrowserRouter>
-    <div className="dashboard">
-      <Nav />
-      <Header />
-      <div className="content">
-        <Switch>
-          {restricted.map(({ path, component }, index) => (
-            <Route exact path={path} key={index} component={component} />
-          ))}
+  <div className="dashboard">
+    <Nav />
+    <Header />
+    <div className="content">
+      <Switch>
+        {restricted.map(({ path, component }, index) => (
+          <Route exact path={path} key={index} component={component} />
+        ))}
 
-          {dummy.map(({ path, name }, index) => (
-            <Route
-              exact
-              path={path}
-              key={index}
-              render={() => <Dummy name={name} />}
-            />
-          ))}
-        </Switch>
-      </div>
-      <Footer />
+        {dummy.map(({ path, name }, index) => (
+          <Route
+            exact
+            path={path}
+            key={index}
+            render={() => <Dummy name={name} />}
+          />
+        ))}
+      </Switch>
     </div>
-  </BrowserRouter>
+    <Footer />
+  </div>
 );
 export default Dashboard;
