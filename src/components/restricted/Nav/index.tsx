@@ -18,8 +18,8 @@ const Nav = () => {
   const auth = useContext(AuthContext);
   return (
     <nav className="navigation">
-      <Logo height={40} width={40} link="/home" />
-      <NavItem description="Home" destination="/home" icon={faHome} />
+      <Logo height={40} width={40} link="/" />
+      <NavItem description="Home" destination="/" icon={faHome} />
       <NavItem description="Explore" destination="/explore" icon={faHashtag} />
       <NavItem
         description="Notifications"

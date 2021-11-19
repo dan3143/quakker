@@ -6,10 +6,8 @@ const quaks: Quak[] = [
     user: "kev",
     content: "—Soy Rosa.\n—Ah perdón, es que soy daltónico.",
     likes: 2,
-    requaks: 1,
-    replies: 0,
-    type: "quak",
     date: "2021-08-08 10:48:21",
+    type: "quak",
   },
 
   {
@@ -17,10 +15,8 @@ const quaks: Quak[] = [
     user: "maria_camila",
     content: "—Soy Rosa.\n—Ah perdón, es que soy daltónica.",
     likes: 987,
-    requaks: 351,
-    replies: 1043,
-    type: "quak",
     date: "2021-08-09 10:58:12",
+    type: "quak",
   },
 
   {
