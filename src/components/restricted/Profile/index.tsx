@@ -45,7 +45,9 @@ const Profile: FC = () => {
         }
         setIsPasswordValid(true);
         auth.update(newUsername, newEmail, newName);
-        console.log("Toasting...");
+        setPasswordConfirmation("");
+        setNewPassword("");
+        setArePasswordsEqual(true);
         toast.success("Information updated");
       })
       .catch((err) => {
