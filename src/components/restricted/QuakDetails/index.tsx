@@ -1,7 +1,10 @@
 import Metadata from "components/common/Metadata";
 import Quak from "components/common/Quak";
 import useQuaks from "hooks/useQuaks";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router";
+import { getQuak } from "services/quaksService";
+import { Quak as QuakType } from "types/quak";
 
 interface QuakDetailsParams {
   id: string;
@@ -9,22 +12,26 @@ interface QuakDetailsParams {
 
 const QuakDetails = () => {
   const { id } = useParams<QuakDetailsParams>();
-  const [quaks, ..._] = useQuaks();
-  const idNumber = parseInt(id);
-  const quak = quaks.find((q) => q.id === idNumber);
-  if (quak === undefined) {
-    return <div></div>;
-  }
-  const replies = quaks.filter(
-    (q) => q.parent === quak.id && q.type === "reply"
-  );
+  const [quak, setQuak] = useState<QuakType>();
+
+  useEffect(() => {
+    getQuak(id).then(setQuak).catch(console.error);
+    return () => {
+      setQuak(undefined);
+    };
+  }, []);
+
+  if (!quak) return <div></div>;
+
+  const { comments } = quak;
+
   return (
     <main>
       <Metadata title={`${quak.user}'s quak'`} description={quak.content} />
       <Quak quak={quak} />
       <h3 style={{ margin: "20px" }}>Replies</h3>
-      {replies.map((q) => (
-        <Quak quak={q} key={q.id} />
+      {comments.map((c) => (
+        <div>{c.comment}</div>
       ))}
     </main>
   );

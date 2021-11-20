@@ -12,7 +12,7 @@ interface TimelineParams {
 
 const Timeline: FC = () => {
   const { username } = useParams<TimelineParams>();
-  const [quaks, ..._] = useQuaks();
+  /*const [quaks, ..._] = useQuaks();
   const userQuaks = quaks.filter((quak) => quak.user === username);
   const nQuaks = userQuaks.length;
   return (
@@ -23,7 +23,8 @@ const Timeline: FC = () => {
         <Quak quak={quak} key={quak.id} />
       ))}
     </main>
-  );
+  );*/
+  return <div></div>;
 };
 
 export default Timeline;

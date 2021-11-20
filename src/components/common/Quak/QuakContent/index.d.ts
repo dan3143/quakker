@@ -1,8 +1,8 @@
 import { FC } from "react";
 
 interface QuakContentProps {
-    id: number;
-    content: string;
+  id: string;
+  content: string;
 }
 
 declare const QuakContentProps: FC<QuakContentProps>;

@@ -6,7 +6,7 @@ import Metadata from "components/common/Metadata";
 import SearchForm from "components/restricted/Sidebar/Search";
 
 const Search = () => {
-  const [quaks, ..._] = useQuaks();
+  /*const [quaks, ..._] = useQuaks();
   const query = new URLSearchParams(useLocation().search).get("q") ?? "";
   const searchResults =
     query === ""
@@ -49,7 +49,8 @@ const Search = () => {
       </h1>
       {results}
     </main>
-  );
+  );*/
+  return <div></div>;
 };
 
 export default Search;

@@ -1,24 +1,21 @@
 import useUsers from "hooks/useUser";
 import { FC } from "react";
 import { Link } from "react-router-dom";
-import QuakType from "types/quak";
+import { Quak as QuakType } from "types/quak";
 import QuakButtons from "./QuakButtons";
 import QuakContent from "./QuakContent";
 import QuakInfo from "./QuakInfo";
 import "./quak.scss";
+import { getUserPfpUrl } from "services/userService";
 
 interface QuakProps {
   quak: QuakType;
 }
 
 const Quak: FC<QuakProps> = ({ quak }) => {
-  const { id, user, content, date, replies, requaks, likes } = quak;
-  const [_, getUser, ...rest] = useUsers();
-  const { username, name, profilePic } = getUser(user) ?? {
-    username: "",
-    name: "",
-    profilePic: "",
-  };
+  const { _id, user, content, createdAt, likes, comments } = quak;
+  const { username, name } = user;
+  const profilePic = getUserPfpUrl(username);
   return (
     <article className="quak">
       <div className="quak__profile-photo">
@@ -27,13 +24,13 @@ const Quak: FC<QuakProps> = ({ quak }) => {
         </Link>
       </div>
       <div className="quak__main">
-        <QuakInfo username={username} date={date} name={name}></QuakInfo>
-        <QuakContent id={id} content={content ?? ""} />
+        <QuakInfo username={username} date={createdAt} name={name}></QuakInfo>
+        <QuakContent id={_id} content={content ?? ""} />
         <QuakButtons
-          id={id}
+          id={_id}
           likes={likes ?? 0}
-          replies={replies ?? 0}
-          requaks={requaks ?? 0}
+          replies={comments.length}
+          requaks={0}
         />
       </div>
     </article>

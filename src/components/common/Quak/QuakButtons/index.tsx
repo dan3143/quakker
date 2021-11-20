@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 import { FC } from "react";
 
 interface QuakButtonsProps {
-  id: number;
+  id: string;
   likes: number;
   requaks: number;
   replies: number;
