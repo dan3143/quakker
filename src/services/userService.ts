@@ -1,5 +1,6 @@
 import { post, get } from "./http";
 import md5 from "crypto-js/md5";
+import { Author } from "types/quak";
 
 const login = async (username: string, password: string) => {
   const user = {
@@ -11,8 +12,14 @@ const login = async (username: string, password: string) => {
   return json;
 };
 
-const getUser = async (username: string) => {
+const getUser = async (username: string): Promise<Author> => {
   const response = await get(`users/${username}`);
+  const json = await response.json();
+  return json.data;
+};
+
+const getUserQuaks = async (username: string) => {
+  const response = await get(`users/${username}/tweets`);
   const json = await response.json();
   return json.data;
 };
@@ -40,4 +47,4 @@ const signUp = async (
   return json;
 };
 
-export { login, signUp, getUser, getUserPfpUrl };
+export { login, signUp, getUser, getUserPfpUrl, getUserQuaks };

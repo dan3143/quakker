@@ -1,24 +1,16 @@
 import { FC, useEffect, useState } from "react";
 import { getUser, getUserPfpUrl } from "services/userService";
+import { Author } from "types/quak";
 import { formatNumber } from "utils";
 
 interface UserInfoProps {
-  username: string;
+  user: Author;
   nQuaks: number;
 }
 
-const UserInfo: FC<UserInfoProps> = ({ username, nQuaks }) => {
-  const [user, setUser] = useState();
-  useEffect(() => {
-    getUser(username)
-      .then((user) => {
-        setUser(user);
-      })
-      .catch((err) => console.error("User not found"));
-  }, []);
-  if (!user) return <div></div>;
-  const { name } = user;
-  const profilePic = getUserPfpUrl(username);
+const UserInfo: FC<UserInfoProps> = ({ user, nQuaks }) => {
+  const { name, email, username } = user;
+  const profilePic = getUserPfpUrl(email);
   const formattedNQuaks = formatNumber(nQuaks);
   return (
     <header className="user-header">
