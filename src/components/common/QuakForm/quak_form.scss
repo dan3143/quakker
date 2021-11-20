@@ -1,14 +1,20 @@
 @import "variables";
+@import "mixins";
+
+
 
 .quak-form {
     display: flex;
     gap: 1rem;
     padding: 1rem;
+    border-bottom: 1px solid $borderColor;
 
     .quak-form__pfp {
+        display: none;
+
         img {
-            height: 64px;
-            width: 64px;
+            height: 48px;
+            width: 48px;
             border-radius: 100px;
         }
     }
@@ -22,14 +28,33 @@
 
         .quak-form__input {
             width: 100%;
-            padding: 0.5rem;
-            border: 2px solid $borderColor;
+
+            border: none;
             border-radius: 5px;
             resize: none;
+            font-size: large;
+
 
             &:focus {
                 border-color: transparent;
+                outline: none;
             }
         }
+
+        .button {
+            width: min-content;
+            margin: 0;
+            font-size: large;
+            padding: 0.6rem 1rem;
+        }
     }
+}
+
+@include medium {
+    .quak-form {
+        .quak-form__pfp {
+            display: block;
+        }
+    }
+
 }
