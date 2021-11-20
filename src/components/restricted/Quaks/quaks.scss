@@ -22,13 +22,8 @@
     margin-left: 32px;
 }
 
-.loading-wrapper {
-    display: flex;
-    justify-content: center;
-    margin-top: 2rem;
-}
 
-@include small {
+@include medium {
     .home .sidebar {
         display: flex;
     }
