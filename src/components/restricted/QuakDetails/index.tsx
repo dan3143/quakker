@@ -5,7 +5,7 @@ import QuakComment from "components/common/Quak/QuakComment";
 import QuakForm from "components/common/QuakForm";
 import { AuthContext } from "context/AuthContext";
 import { useContext, useEffect, useState } from "react";
-import { useParams } from "react-router";
+import { useHistory, useParams } from "react-router";
 import { commentQuak, getQuak } from "services/quaksService";
 import { Quak as QuakType, Comment } from "types/quak";
 
@@ -44,6 +44,8 @@ const QuakDetails = () => {
     });
   };
 
+  const history = useHistory();
+
   if (!quak) return <div></div>;
 
   return isLoading ? (
@@ -51,7 +53,12 @@ const QuakDetails = () => {
   ) : (
     <main className="quak-details">
       <Metadata title={`${quak.user}'s quak'`} description={quak.content} />
-      <Quak quak={quak} onDelete={(id: string) => {}} />
+      <Quak
+        quak={quak}
+        onDelete={(id: string) => {
+          history.push("/");
+        }}
+      />
       <QuakForm
         placeholder="Make a comment"
         action={handleComment}
