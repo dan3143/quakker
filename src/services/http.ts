@@ -17,6 +17,7 @@ const postAuth = (endpoint: string, token: string, data: object) =>
   fetch(`${apiUrl}/${endpoint}`, {
     headers: {
       "x-access-token": token,
+      "Content-Type": "application/json",
     },
     body: JSON.stringify(data),
     method: "POST",
@@ -24,10 +25,11 @@ const postAuth = (endpoint: string, token: string, data: object) =>
 
 const deleteAuth = (endpoint: string, token: string, data: object) =>
   fetch(`${apiUrl}/${endpoint}`, {
+    body: JSON.stringify(data),
     headers: {
       "x-access-token": token,
+      "Content-Type": "application/json",
     },
-    body: JSON.stringify(data),
     method: "DELETE",
   });
 
@@ -35,6 +37,7 @@ const putAuth = (endpoint: string, token: string, data: object) =>
   fetch(`${apiUrl}/${endpoint}`, {
     headers: {
       "x-access-token": token,
+      "Content-Type": "application/json",
     },
     body: JSON.stringify(data),
     method: "PUT",

@@ -5,7 +5,6 @@ interface Comment {
 }
 
 interface Author {
-  _id: string;
   name: string;
   username: string;
 }

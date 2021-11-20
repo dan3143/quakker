@@ -7,9 +7,16 @@ import "./quak_form.scss";
 interface QuakFormProps {
   action: () => void;
   placeholder: string;
+  setState: (s: string) => void;
+  state: string;
 }
 
-const QuakForm: FC<QuakFormProps> = ({ action, placeholder }) => {
+const QuakForm: FC<QuakFormProps> = ({
+  action,
+  placeholder,
+  setState,
+  state,
+}) => {
   const auth = useContext(AuthContext);
   const user = auth.getUser();
   const { username, name } = user;
@@ -32,8 +39,14 @@ const QuakForm: FC<QuakFormProps> = ({ action, placeholder }) => {
           aria-label="Quak content"
           placeholder={placeholder}
           rows={2}
+          onChange={(event) => setState(event.target.value)}
+          value={state}
         ></textarea>
-        <input type="submit" value="Crear" className="button button--primary" />
+        <input
+          type="submit"
+          value="Create"
+          className="button button--primary"
+        />
       </form>
     </div>
   );

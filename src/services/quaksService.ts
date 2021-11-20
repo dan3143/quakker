@@ -19,6 +19,15 @@ const getQuak = async (id: string) => {
   return json.data;
 };
 
+const commentQuak = async (token: string, tweetId: string, comment: string) => {
+  const response = await postAuth("tweets/comments", token, {
+    tweetId,
+    comment,
+  });
+  const json = await response.json();
+  return json;
+};
+
 const deleteQuak = async (token: string, id: string) => {};
 
-export { getAllQuaks, createQuak, deleteQuak, getQuak };
+export { getAllQuaks, createQuak, deleteQuak, getQuak, commentQuak };
