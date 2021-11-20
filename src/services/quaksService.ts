@@ -40,4 +40,25 @@ const deleteQuak = async (token: string, tweetId: string) => {
   return json;
 };
 
-export { getAllQuaks, createQuak, deleteQuak, getQuak, commentQuak, likeQuak };
+const deleteComment = async (
+  token: string,
+  tweetId: string,
+  commentId: string
+) => {
+  const response = await deleteAuth("tweets/comments", token, {
+    tweetId,
+    commentId,
+  });
+  const json = await response.json();
+  return json;
+};
+
+export {
+  getAllQuaks,
+  createQuak,
+  deleteQuak,
+  getQuak,
+  commentQuak,
+  likeQuak,
+  deleteComment,
+};

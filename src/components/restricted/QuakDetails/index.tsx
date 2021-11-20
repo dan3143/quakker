@@ -44,6 +44,11 @@ const QuakDetails = () => {
     });
   };
 
+  const handleDeleteComment = (id: string) => {
+    const filtered = comments.filter((comment) => comment._id !== id);
+    setComments(filtered);
+  };
+
   const history = useHistory();
 
   if (!quak) return <div></div>;
@@ -67,7 +72,12 @@ const QuakDetails = () => {
       />
       <h3 style={{ margin: "20px" }}>Comments</h3>
       {comments.map((c) => (
-        <QuakComment key={c._id} comment={c} />
+        <QuakComment
+          key={c._id}
+          comment={c}
+          tweetId={id}
+          onDelete={handleDeleteComment}
+        />
       ))}
     </main>
   );

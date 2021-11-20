@@ -51,6 +51,12 @@ $textColor100: gray;
 .comment {
     padding: 20px 17px;
     border-bottom: 1px solid $borderColor;
+    display: flex;
+
+
+    .comment__content {
+        flex: 1;
+    }
 }
 
 .quak-info__separator,
