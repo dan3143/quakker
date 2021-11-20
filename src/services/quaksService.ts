@@ -10,7 +10,7 @@ const getAllQuaks = async (token: string) => {
 const createQuak = async (token: string, content: string) => {
   const response = await postAuth("tweets", token, { content });
   const json = await response.json();
-  return json;
+  return json.data;
 };
 
 const getQuak = async (id: string) => {
