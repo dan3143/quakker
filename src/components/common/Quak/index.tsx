@@ -1,5 +1,5 @@
 import useUsers from "hooks/useUser";
-import { FC } from "react";
+import { FC, useState } from "react";
 import { Link } from "react-router-dom";
 import { Quak as QuakType } from "types/quak";
 import QuakButtons from "./QuakButtons";

@@ -1,4 +1,4 @@
-import { getAuth, postAuth, get } from "./http";
+import { getAuth, postAuth, get, putAuth } from "./http";
 
 const getAllQuaks = async (token: string) => {
   const response = await getAuth("tweets", token);
@@ -19,6 +19,12 @@ const getQuak = async (id: string) => {
   return json.data;
 };
 
+const likeQuak = async (token: string, tweetId: string) => {
+  const response = await postAuth("tweets/likes", token, { like: 1, tweetId });
+  const json = await response.json();
+  return json;
+};
+
 const commentQuak = async (token: string, tweetId: string, comment: string) => {
   const response = await postAuth("tweets/comments", token, {
     tweetId,
@@ -30,4 +36,4 @@ const commentQuak = async (token: string, tweetId: string, comment: string) => {
 
 const deleteQuak = async (token: string, id: string) => {};
 
-export { getAllQuaks, createQuak, deleteQuak, getQuak, commentQuak };
+export { getAllQuaks, createQuak, deleteQuak, getQuak, commentQuak, likeQuak };
