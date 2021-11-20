@@ -1,6 +1,6 @@
 interface Comment {
   _id: string;
-  commenter: Author;
+  user: Author;
   comment: string;
 }
 

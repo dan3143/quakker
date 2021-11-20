@@ -48,6 +48,11 @@ $textColor100: gray;
     }
 }
 
+.comment {
+    padding: 20px 17px;
+    border-bottom: 1px solid $borderColor;
+}
+
 .quak-info__separator,
 .quak-info__date {
     color: $textColor100;

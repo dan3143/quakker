@@ -1,5 +1,6 @@
 import Metadata from "components/common/Metadata";
 import Quak from "components/common/Quak";
+import QuakComment from "components/common/Quak/QuakComment";
 import useQuaks from "hooks/useQuaks";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
@@ -25,13 +26,14 @@ const QuakDetails = () => {
 
   const { comments } = quak;
 
+  console.log(comments);
   return (
     <main>
       <Metadata title={`${quak.user}'s quak'`} description={quak.content} />
       <Quak quak={quak} />
       <h3 style={{ margin: "20px" }}>Replies</h3>
       {comments.map((c) => (
-        <div>{c.comment}</div>
+        <QuakComment comment={c} />
       ))}
     </main>
   );
