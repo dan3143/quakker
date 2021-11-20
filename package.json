@@ -6,7 +6,8 @@
   "author": "dan3143",
   "license": "MIT",
   "scripts": {
-    "start": "webpack serve --mode development",
+    "dev": "webpack serve --mode development",
+    "start": "node server.js",
     "build": "rm -r ./build/* ; webpack --mode production"
   },
   "devDependencies": {
