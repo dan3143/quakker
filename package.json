@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "start": "webpack serve --mode development",
-    "build": "rm -r build/* && webpack"
+    "build": "rm -r ./build/* ; webpack --mode production"
   },
   "devDependencies": {
     "@babel/core": "^7.15.8",
@@ -39,6 +39,7 @@
     "@fortawesome/react-fontawesome": "^0.1.15",
     "@types/crypto-js": "^4.0.2",
     "crypto-js": "^4.1.1",
+    "express": "^4.17.1",
     "normalize.css": "^8.0.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",

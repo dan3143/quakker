@@ -1,6 +1,6 @@
 import { unrestricted } from "lib/routes";
 import { HelmetProvider } from "react-helmet-async";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Dashboard from "components/restricted/Dashboard";
 import { useContext } from "react";
 import { AuthContext } from "context/AuthContext";
@@ -11,7 +11,7 @@ const App = () => {
   const auth = useContext(AuthContext);
   return (
     <HelmetProvider context={helmetContext}>
-      <BrowserRouter>
+      <Router>
         {auth.isLoggedIn() ? (
           <Dashboard />
         ) : (
@@ -26,7 +26,7 @@ const App = () => {
             ))}
           </Switch>
         )}
-      </BrowserRouter>
+      </Router>
     </HelmetProvider>
   );
 };
