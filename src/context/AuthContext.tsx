@@ -1,5 +1,6 @@
 import { createContext, FC, useEffect, useState } from "react";
 import { isObjectEmpty } from "utils";
+import { getUser as findUser } from "services/userService";
 
 interface AuthInfo {
   token?: string;
@@ -35,8 +36,14 @@ const AuthProvider: FC = ({ children }) => {
   }, []);
 
   const login = (user: AuthInfo) => {
-    setUser(user);
-    localStorage.setItem("user", JSON.stringify(user));
+    findUser(user.username!)
+      .then((foundUser) => {
+        const { username, name, email } = foundUser;
+        const userInfo = { username, name, email, token: user.token };
+        setUser(userInfo);
+        localStorage.setItem("user", JSON.stringify(userInfo));
+      })
+      .catch((err) => console.error(err));
   };
 
   const logout = () => {

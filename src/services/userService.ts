@@ -1,4 +1,5 @@
-import { post } from "./http";
+import { post, get } from "./http";
+import md5 from "crypto-js/md5";
 
 const login = async (username: string, password: string) => {
   const user = {
@@ -9,6 +10,15 @@ const login = async (username: string, password: string) => {
   const json = await response.json();
   return json;
 };
+
+const getUser = async (username: string) => {
+  const response = await get(`users/${username}`);
+  const json = await response.json();
+  return json.data;
+};
+
+const getUserPfpUrl = (email: string) =>
+  `https://gravatar.com/avatar/${md5(email)}`;
 
 const signUp = async (
   username: string,
@@ -30,4 +40,4 @@ const signUp = async (
   return json;
 };
 
-export { login, signUp };
+export { login, signUp, getUser, getUserPfpUrl };

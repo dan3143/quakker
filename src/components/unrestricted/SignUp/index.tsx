@@ -24,15 +24,16 @@ const SignUp = () => {
   const handleSignUp = (event: FormEvent) => {
     event.preventDefault();
     if (!samePassword) return;
+    setSamePassword(true);
     signUp(username, email, name, password, passwordConfirm)
       .then((json) => {
+        setShowError(false);
         if (json["message"][0] === "invalid password") {
           setIsPasswordValid(false);
           document.getElementById("invalid-password")?.scrollIntoView();
           return;
         }
         setIsPasswordValid(true);
-        setSamePassword(true);
         history.push("/login");
       })
       .catch((error) => setShowError(true));

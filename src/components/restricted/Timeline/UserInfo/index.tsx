@@ -1,5 +1,6 @@
 import useUsers from "hooks/useUser";
-import { FC } from "react";
+import { FC, useEffect, useState } from "react";
+import { getUser, getUserPfpUrl } from "services/userService";
 import { formatNumber } from "utils";
 
 interface UserInfoProps {
@@ -8,10 +9,17 @@ interface UserInfoProps {
 }
 
 const UserInfo: FC<UserInfoProps> = ({ username, nQuaks }) => {
-  const [users, ..._] = useUsers();
-  const user = users.find((user) => user.username === username);
+  const [user, setUser] = useState();
+  useEffect(() => {
+    getUser(username)
+      .then((user) => {
+        setUser(user);
+      })
+      .catch((err) => console.error("User not found"));
+  }, []);
   if (!user) return <div></div>;
-  const { profilePic, name } = user;
+  const { name } = user;
+  const profilePic = getUserPfpUrl(username);
   const formattedNQuaks = formatNumber(nQuaks);
   return (
     <header className="user-header">
