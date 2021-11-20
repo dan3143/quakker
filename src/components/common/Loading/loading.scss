@@ -1,0 +1,17 @@
+@import "variables";
+
+/* */
+.loading {
+    border: 4px solid $primaryColor;
+    border-top-color: $borderColor;
+    border-radius: 50%;
+    width: 3em;
+    height: 3em;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
