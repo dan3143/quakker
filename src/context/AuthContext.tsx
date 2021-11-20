@@ -8,6 +8,7 @@ interface IAuthProvider {
   logout: () => void;
   isLoggedIn: () => boolean;
   getUser: () => AuthInfo;
+  update: (username: string, email: string, nanem: string) => void;
 }
 
 const defaultState = {
@@ -17,6 +18,7 @@ const defaultState = {
   getUser: () => {
     return {};
   },
+  update: (username: string, email: string, name: string) => {},
 };
 
 const AuthContext = createContext<IAuthProvider>(defaultState);
@@ -29,11 +31,18 @@ const AuthProvider: FC = ({ children }) => {
     setUser(user);
   }, []);
 
+  const update = (username: string, email: string, name: string) => {
+    const { _id, token } = user ?? {};
+    const newInfo = { _id, token, username, name, email };
+    localStorage.setItem("user", JSON.stringify(newInfo));
+    setUser(newInfo);
+  };
+
   const login = (user: AuthInfo) => {
     findUser(user.username!)
       .then((foundUser) => {
-        const { username, name, email } = foundUser;
-        const userInfo = { username, name, email, token: user.token };
+        const { username, name, email, _id } = foundUser;
+        const userInfo = { _id, username, name, email, token: user.token };
         setUser(userInfo);
         localStorage.setItem("user", JSON.stringify(userInfo));
       })
@@ -50,7 +59,9 @@ const AuthProvider: FC = ({ children }) => {
   const getUser = () => user ?? {};
 
   return (
-    <AuthContext.Provider value={{ login, logout, isLoggedIn, getUser }}>
+    <AuthContext.Provider
+      value={{ login, logout, isLoggedIn, getUser, update }}
+    >
       {children}
     </AuthContext.Provider>
   );

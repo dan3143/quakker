@@ -1,6 +1,6 @@
-import { post, get } from "./http";
+import { post, get, putAuth } from "./http";
 import md5 from "crypto-js/md5";
-import { Author } from "types/quak";
+import { AuthInfo } from "types/user";
 
 const login = async (username: string, password: string) => {
   const user = {
@@ -12,7 +12,7 @@ const login = async (username: string, password: string) => {
   return json;
 };
 
-const getUser = async (username: string): Promise<Author> => {
+const getUser = async (username: string) => {
   const response = await get(`users/${username}`);
   const json = await response.json();
   return json.data;
@@ -26,6 +26,27 @@ const getUserQuaks = async (username: string) => {
 
 const getUserPfpUrl = (email?: string) =>
   `https://gravatar.com/avatar/${email ? md5(email) : ""}`;
+
+const updateUser = async (
+  token: string,
+  userId: string,
+  username: string,
+  name: string,
+  email: string,
+  password: string,
+  passwordConfirmation: string
+) => {
+  const data = {
+    name,
+    email,
+    password,
+    username,
+    passwordConfirmation,
+  };
+  const response = await putAuth(`users/${userId}`, token, data);
+  const json = await response.json();
+  return json;
+};
 
 const signUp = async (
   username: string,
@@ -47,4 +68,4 @@ const signUp = async (
   return json;
 };
 
-export { login, signUp, getUser, getUserPfpUrl, getUserQuaks };
+export { login, signUp, getUser, getUserPfpUrl, getUserQuaks, updateUser };
