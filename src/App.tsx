@@ -9,7 +9,6 @@ const helmetContext = {};
 
 const App = () => {
   const auth = useContext(AuthContext);
-  console.log(auth.getUser());
   return (
     <HelmetProvider context={helmetContext}>
       <BrowserRouter>

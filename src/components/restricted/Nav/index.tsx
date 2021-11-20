@@ -6,6 +6,7 @@ import {
   faHashtag,
   faHome,
   faList,
+  faSignOutAlt,
   faUser,
 } from "@fortawesome/free-solid-svg-icons";
 import Logo from "components/common/Logo";
@@ -36,7 +37,7 @@ const Nav = () => {
         destination="/bookmarks"
         icon={faBookmark}
       />
-      <NavItem description="Lists" destination="/lists" icon={faList} />
+      <NavItem description="Logout" onClick={auth.logout} icon={faSignOutAlt} />
       <NavItem description="Profile" destination="/profile" icon={faUser} />
       <NavItem description="More" destination="/more" icon={faEllipsisH} />
 
