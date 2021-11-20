@@ -1,20 +1,22 @@
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Logo from "components/common/Logo";
-import useUsers from "hooks/useUser";
+import { AuthContext } from "context/AuthContext";
 
-import { FC } from "react";
+import { FC, useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { getUserPfpUrl } from "services/userService";
 import "./header.scss";
 
 const Header: FC = () => {
-  const [users, getUser, addUser, deleteUser] = useUsers();
-  const pic =
-    getUser("kev")?.profilePic ??
-    "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png";
+  const auth = useContext(AuthContext);
+  const user = auth.getUser();
+  const { email, username } = user;
+  const pic = getUserPfpUrl(email);
+
   return (
     <header className="mobile-header">
-      <Link to="/timeline/kev">
+      <Link to={`/timeline/${username}`}>
         <img
           src={pic}
           alt="Your profile pic"

@@ -51,7 +51,7 @@ const QuakDetails = () => {
   ) : (
     <main className="quak-details">
       <Metadata title={`${quak.user}'s quak'`} description={quak.content} />
-      <Quak quak={quak} />
+      <Quak quak={quak} onDelete={(id: string) => {}} />
       <QuakForm
         placeholder="Make a comment"
         action={handleComment}

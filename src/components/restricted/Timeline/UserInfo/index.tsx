@@ -1,4 +1,3 @@
-import useUsers from "hooks/useUser";
 import { FC, useEffect, useState } from "react";
 import { getUser, getUserPfpUrl } from "services/userService";
 import { formatNumber } from "utils";

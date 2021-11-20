@@ -24,6 +24,11 @@ const Quaks: FC = () => {
     });
   };
 
+  const handleDeleteQuak = (id: string) => {
+    const filtered = quaks.filter((quak) => quak._id !== id);
+    setQuaks(filtered);
+  };
+
   useEffect(() => {
     getAllQuaks(token ?? "").then((quaks) => {
       setQuaks(quaks);
@@ -48,7 +53,9 @@ const Quaks: FC = () => {
         {isLoading ? (
           <Loading />
         ) : (
-          quaks.map((quak) => <Quak quak={quak} key={quak._id} />)
+          quaks.map((quak) => (
+            <Quak quak={quak} key={quak._id} onDelete={handleDeleteQuak} />
+          ))
         )}
       </main>
       <Sidebar />

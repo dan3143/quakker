@@ -1,13 +1,7 @@
 import { createContext, FC, useEffect, useState } from "react";
 import { isObjectEmpty } from "utils";
 import { getUser as findUser } from "services/userService";
-
-interface AuthInfo {
-  token?: string;
-  name?: string;
-  username?: string;
-  email?: string;
-}
+import { AuthInfo } from "types/user";
 
 interface IAuthProvider {
   login: (u: AuthInfo) => void;

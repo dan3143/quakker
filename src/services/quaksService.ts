@@ -1,4 +1,4 @@
-import { getAuth, postAuth, get, putAuth } from "./http";
+import { getAuth, postAuth, get, putAuth, deleteAuth } from "./http";
 
 const getAllQuaks = async (token: string) => {
   const response = await getAuth("tweets", token);
@@ -34,6 +34,10 @@ const commentQuak = async (token: string, tweetId: string, comment: string) => {
   return json;
 };
 
-const deleteQuak = async (token: string, id: string) => {};
+const deleteQuak = async (token: string, tweetId: string) => {
+  const response = await deleteAuth("tweets", token, { tweetId });
+  const json = await response.json();
+  return json;
+};
 
 export { getAllQuaks, createQuak, deleteQuak, getQuak, commentQuak, likeQuak };

@@ -4,24 +4,30 @@ import {
   faComment,
   faRetweet,
   faShare,
+  faTrash,
 } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
-import { FC, useContext, useState } from "react";
-import { likeQuak } from "services/quaksService";
-import { AuthContext } from "context/AuthContext";
+import { FC, useState } from "react";
+import { deleteQuak, likeQuak } from "services/quaksService";
+import { AuthInfo } from "types/user";
+import { Author } from "types/quak";
 
 interface QuakButtonsProps {
   id: string;
   likes: number;
   requaks: number;
   replies: number;
+  token: string;
 }
 
-const QuakButtons: FC<QuakButtonsProps> = ({ id, likes, requaks, replies }) => {
+const QuakButtons: FC<QuakButtonsProps> = ({
+  id,
+  likes,
+  requaks,
+  replies,
+  token,
+}) => {
   const [likeAmout, setLikeAmout] = useState(likes);
-  const auth = useContext(AuthContext);
-  const user = auth.getUser();
-  const { token } = user;
 
   const handleLike = () => {
     likeQuak(token ?? "", id).then((data) => {
@@ -48,9 +54,6 @@ const QuakButtons: FC<QuakButtonsProps> = ({ id, likes, requaks, replies }) => {
       >
         <FontAwesomeIcon icon={faHeart} className="quak-button__icon" />
         <span className="quak-button__amount">{likeAmout}</span>
-      </button>
-      <button className="quak-button quak-button--share" name="share">
-        <FontAwesomeIcon icon={faShare} className="quak-button__icon" />
       </button>
     </section>
   );
