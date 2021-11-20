@@ -18,6 +18,7 @@ const Quaks: FC = () => {
   const [quak, setQuak] = useState("");
 
   const handleCreateQuak = () => {
+    if (quak.trim() === "") return;
     createQuak(token ?? "", quak).then((q: QuakType) => {
       setQuaks([q, ...quaks]);
       setQuak("");

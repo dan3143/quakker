@@ -37,9 +37,9 @@ const Nav = () => {
         destination="/bookmarks"
         icon={faBookmark}
       />
-      <NavItem description="Logout" onClick={auth.logout} icon={faSignOutAlt} />
       <NavItem description="Profile" destination="/profile" icon={faUser} />
       <NavItem description="More" destination="/more" icon={faEllipsisH} />
+      <NavItem description="Logout" onClick={auth.logout} icon={faSignOutAlt} />
 
       <button className="button button--primary">Tweet</button>
     </nav>

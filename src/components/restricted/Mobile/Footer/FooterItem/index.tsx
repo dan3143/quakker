@@ -4,15 +4,20 @@ import { FC } from "react";
 import { Link, NavLink } from "react-router-dom";
 
 interface FooterItemProps {
-  to: string;
+  to?: string;
   icon: IconProp;
+  onClick?: () => void;
 }
 
-const FooterItem: FC<FooterItemProps> = ({ to, icon }) => (
+const FooterItem: FC<FooterItemProps> = ({ to, icon, onClick }) => (
   <NavLink
-    to={to}
+    to={to ?? ""}
     className="mobile-footer__footer-item"
-    activeClassName="mobile-footer__footer-item--active"
+    activeClassName={
+      to === undefined ? "" : "mobile-footer__footer-item--active"
+    }
+    onClick={onClick}
+    exact
   >
     <FontAwesomeIcon icon={icon} />
   </NavLink>
