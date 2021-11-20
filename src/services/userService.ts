@@ -17,8 +17,8 @@ const getUser = async (username: string) => {
   return json.data;
 };
 
-const getUserPfpUrl = (email: string) =>
-  `https://gravatar.com/avatar/${md5(email)}`;
+const getUserPfpUrl = (email?: string) =>
+  `https://gravatar.com/avatar/${email ? md5(email) : ""}`;
 
 const signUp = async (
   username: string,
