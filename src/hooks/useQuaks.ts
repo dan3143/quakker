@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import { createQuak, deleteQuak, getAllQuaks } from "services/quaksService";
+import { useState } from "react";
+import { createQuak, deleteQuak } from "services/quaksService";
 import { Quak } from "types/quak";
 
 const useQuaks = (

@@ -53,6 +53,12 @@ const deleteComment = async (
   return json;
 };
 
+const searchQuaks = async (search: string) => {
+  const response = await get(`tweets/search?q=${search}`);
+  const json = await response.json();
+  return json.data;
+};
+
 export {
   getAllQuaks,
   createQuak,
@@ -61,4 +67,5 @@ export {
   commentQuak,
   likeQuak,
   deleteComment,
+  searchQuaks,
 };

@@ -7,7 +7,7 @@ const process = processString([
     fn: (key, result) => {
       let topic = result[1];
       return (
-        <Link to={`/trending/${topic}`} className="quak__link" key={key}>
+        <Link to={`/search?q=${topic}`} className="quak__link" key={key}>
           {result[0]}
         </Link>
       );

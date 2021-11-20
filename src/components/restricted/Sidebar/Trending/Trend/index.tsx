@@ -12,7 +12,7 @@ const Trend: FC<TrendProps> = ({ index, trend }) => {
   const { name, quak_volume } = trend;
   return (
     <article className="trend">
-      <Link to={`/search?q=%23${name}`}>
+      <Link to={`/search?q=${name}`}>
         <p className="trend__position">{index}. Trending</p>
         <p className="trend__name">#{name}</p>
         <p className="trend__quaks">{formatNumber(quak_volume)} Quaks</p>
