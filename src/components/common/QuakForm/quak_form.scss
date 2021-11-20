@@ -1,0 +1,35 @@
+@import "variables";
+
+.quak-form {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+
+    .quak-form__pfp {
+        img {
+            height: 64px;
+            width: 64px;
+            border-radius: 100px;
+        }
+    }
+
+    form {
+        display: flex;
+        flex-flow: column;
+        gap: 1rem;
+        flex: 1;
+        padding: 0;
+
+        .quak-form__input {
+            width: 100%;
+            padding: 0.5rem;
+            border: 2px solid $borderColor;
+            border-radius: 5px;
+            resize: none;
+
+            &:focus {
+                border-color: transparent;
+            }
+        }
+    }
+}
