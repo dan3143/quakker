@@ -14,8 +14,8 @@ interface QuakProps {
 
 const Quak: FC<QuakProps> = ({ quak }) => {
   const { _id, user, content, createdAt, likes, comments } = quak;
-  const { username, name } = user;
-  const profilePic = getUserPfpUrl(username);
+  const { username, name, email } = user;
+  const profilePic = getUserPfpUrl(email);
   return (
     <article className="quak">
       <div className="quak__profile-photo">

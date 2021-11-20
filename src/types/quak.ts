@@ -7,6 +7,7 @@ interface Comment {
 interface Author {
   name: string;
   username: string;
+  email: string;
 }
 
 interface Quak {
