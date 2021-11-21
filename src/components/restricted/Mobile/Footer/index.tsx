@@ -7,7 +7,6 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { AuthContext } from "context/AuthContext";
 import { FC, useContext } from "react";
-import { Link } from "react-router-dom";
 import "./footer.scss";
 import FooterItem from "./FooterItem";
 

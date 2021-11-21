@@ -1,4 +1,4 @@
-import { getAuth, postAuth, get, putAuth, deleteAuth } from "./http";
+import { getAuth, postAuth, get, deleteAuth } from "./http";
 
 const getAllQuaks = async (token: string) => {
   const response = await getAuth("tweets", token);

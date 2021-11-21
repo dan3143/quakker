@@ -1,5 +1,4 @@
 import { useLocation } from "react-router";
-import useQuaks from "hooks/useQuaks";
 import Quak from "components/common/Quak";
 import "./search.scss";
 import Metadata from "components/common/Metadata";

@@ -1,6 +1,5 @@
 import { post, get, putAuth } from "./http";
 import md5 from "crypto-js/md5";
-import { AuthInfo } from "types/user";
 
 const login = async (username: string, password: string) => {
   const user = {

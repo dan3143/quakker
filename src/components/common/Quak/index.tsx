@@ -1,4 +1,4 @@
-import { FC, useContext, useState } from "react";
+import { FC, useContext } from "react";
 import { Link } from "react-router-dom";
 import { Quak as QuakType } from "types/quak";
 import QuakButtons from "./QuakButtons";
@@ -7,7 +7,7 @@ import QuakInfo from "./QuakInfo";
 import "./quak.scss";
 import { getUserPfpUrl } from "services/userService";
 import { AuthContext } from "context/AuthContext";
-import { faTrash, faTrashAlt } from "@fortawesome/free-solid-svg-icons";
+import { faTrashAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { deleteQuak } from "services/quaksService";
 
@@ -24,7 +24,7 @@ const Quak: FC<QuakProps> = ({ quak, onDelete }) => {
   const authUser = auth.getUser();
   const { token } = authUser;
   const handleDelete = () => {
-    deleteQuak(token ?? "", _id).then((data) => {
+    deleteQuak(token ?? "", _id).then(() => {
       onDelete(_id);
     });
   };

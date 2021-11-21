@@ -3,14 +3,10 @@ import {
   faHeart,
   faComment,
   faRetweet,
-  faShare,
-  faTrash,
 } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import { FC, useState } from "react";
-import { deleteQuak, likeQuak } from "services/quaksService";
-import { AuthInfo } from "types/user";
-import { Author } from "types/quak";
+import { likeQuak } from "services/quaksService";
 
 interface QuakButtonsProps {
   id: string;

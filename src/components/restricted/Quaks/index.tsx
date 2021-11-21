@@ -14,7 +14,7 @@ const Quaks: FC = () => {
   const auth = useContext(AuthContext);
   const [isLoading, setIsLoading] = useState(true);
   const { token } = auth.getUser();
-  const [quaks, setQuaks, _] = useQuaks(token ?? "");
+  const [quaks, setQuaks] = useQuaks(token ?? "");
   const [quak, setQuak] = useState("");
 
   const handleCreateQuak = () => {

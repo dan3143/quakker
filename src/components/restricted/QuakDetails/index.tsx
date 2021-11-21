@@ -63,7 +63,7 @@ const QuakDetails = () => {
       />
       <Quak
         quak={quak}
-        onDelete={(id: string) => {
+        onDelete={() => {
           history.push("/");
         }}
       />

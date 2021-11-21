@@ -1,5 +1,5 @@
-import { FC, useEffect, useState } from "react";
-import { getUser, getUserPfpUrl } from "services/userService";
+import { FC } from "react";
+import { getUserPfpUrl } from "services/userService";
 import { Author } from "types/quak";
 import { formatNumber } from "utils";
 
