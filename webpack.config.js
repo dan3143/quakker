@@ -62,7 +62,8 @@ module.exports = {
   },
   plugins: [
     new Dotenv({
-      path: "./.env",
+      path: path.resolve(process.cwd(), ".env"),
+      systemvars: true,
     }),
     new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
