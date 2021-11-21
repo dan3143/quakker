@@ -7,9 +7,10 @@ interface FooterItemProps {
   to?: string;
   icon: IconProp;
   onClick?: () => void;
+  name: string;
 }
 
-const FooterItem: FC<FooterItemProps> = ({ to, icon, onClick }) => (
+const FooterItem: FC<FooterItemProps> = ({ to, icon, onClick, name }) => (
   <NavLink
     to={to ?? ""}
     className="mobile-footer__footer-item"
@@ -20,6 +21,7 @@ const FooterItem: FC<FooterItemProps> = ({ to, icon, onClick }) => (
     exact
   >
     <FontAwesomeIcon icon={icon} />
+    <span className="sr-only">{name}</span>
   </NavLink>
 );
 

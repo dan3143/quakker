@@ -27,6 +27,7 @@ const Header: FC = () => {
       <Logo height={32} width={32} link="/" />
       <NavLink to="/search" activeClassName="mobile-header__button--active">
         <FontAwesomeIcon icon={faSearch} className="mobile-header__button" />
+        <span className="sr-only">Search</span>
       </NavLink>
     </header>
   );

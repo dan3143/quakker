@@ -35,7 +35,11 @@ const QuakComment: FC<QuakCommentProps> = ({ comment, tweetId, onDelete }) => {
       </div>
       <div>
         {userOwnsComment && (
-          <button className="quak-button" onClick={handleDeleteComment}>
+          <button
+            className="quak-button"
+            onClick={handleDeleteComment}
+            aria-label="Delete comment"
+          >
             <FontAwesomeIcon icon={faTrashAlt} className="quak-button__icon" />
           </button>
         )}

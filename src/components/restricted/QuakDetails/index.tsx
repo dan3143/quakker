@@ -57,7 +57,10 @@ const QuakDetails = () => {
     <Loading />
   ) : (
     <main className="quak-details">
-      <Metadata title={`${quak.user}'s quak'`} description={quak.content} />
+      <Metadata
+        title={`${quak.user.username}'s quak`}
+        description={quak.content}
+      />
       <Quak
         quak={quak}
         onDelete={(id: string) => {

@@ -1,7 +1,7 @@
 @import "variables";
 @import "mixins";
 
-$textColor100: gray;
+$textColor100: rgb(73, 73, 73);
 
 .quak {
     display: flex;
@@ -85,7 +85,7 @@ $textColor100: gray;
     border: none;
     font-size: 1rem;
     cursor: pointer;
-    color: rgb(153, 153, 153);
+    color: rgb(120, 120, 120);
     font-weight: bold;
 }
 
@@ -108,6 +108,10 @@ $textColor100: gray;
 .quak-button__icon {
     height: 100%;
     margin-right: 10px;
+}
+
+.quak-button__amount {
+    color: $textColor100;
 }
 
 .quak-details {

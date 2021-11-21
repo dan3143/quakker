@@ -43,7 +43,7 @@ const Quaks: FC = () => {
   return (
     <div className="home">
       <main className="home__content">
-        <Metadata title="Home" />
+        <Metadata title="Home" description="All the quaks" />
         <QuakForm
           placeholder="Make a quak"
           setState={setQuak}

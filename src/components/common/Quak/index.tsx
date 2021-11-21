@@ -51,6 +51,7 @@ const Quak: FC<QuakProps> = ({ quak, onDelete }) => {
           <button
             className="quak-button quak-button--likes"
             name="delete"
+            aria-label="Delete quak"
             onClick={handleDelete}
           >
             <FontAwesomeIcon icon={faTrashAlt} className="quak-button__icon" />
