@@ -8,7 +8,7 @@
   "scripts": {
     "dev": "webpack serve --mode development",
     "start": "node server.js",
-    "build": "rm -r ./build/* ; webpack --mode production"
+    "build": "webpack --mode production"
   },
   "devDependencies": {
     "@babel/core": "^7.15.8",
@@ -19,6 +19,7 @@
     "@types/react-dom": "^17.0.9",
     "@types/react-router-dom": "^5.3.1",
     "babel-loader": "^8.2.2",
+    "copy-webpack-plugin": "^10.0.0",
     "css-loader": "^6.4.0",
     "dotenv-webpack": "^7.0.3",
     "file-loader": "^6.2.0",

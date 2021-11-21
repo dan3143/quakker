@@ -2,6 +2,7 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const webpack = require("webpack");
 const Dotenv = require("dotenv-webpack");
+const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = {
   entry: path.join(__dirname, "src", "index.tsx"),
@@ -58,7 +59,6 @@ module.exports = {
   },
   devServer: {
     historyApiFallback: true,
-    hot: true,
   },
   plugins: [
     new Dotenv({
@@ -69,6 +69,9 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.join(__dirname, "src", "index.html"),
       favicon: path.join(__dirname, "src", "favicon.ico"),
+    }),
+    new CopyPlugin({
+      patterns: [path.join(__dirname, "src", "robots.txt")],
     }),
   ],
 };
